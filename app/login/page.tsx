@@ -36,8 +36,7 @@ const LoginPage = async () => {
           Fazer login ou criar conta
         </Button>
         </SignInButton>
-
-       
+               
       </div>
 
       <div className="relative h-full w-full">
