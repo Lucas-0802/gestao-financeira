@@ -18,7 +18,7 @@ model Transaction {
   name          String
   type          TransactionType
   amount        Decimal                  @db.Decimal(10, 2)
-  category      TransactionCategoty
+  category      TransactionCategory
   paymentMethod TransactionPaymentMethod
   date          DateTime
   userId        String
@@ -32,7 +32,7 @@ enum TransactionType {
   INVESTMENT
 }
 
-enum TransactionCategoty {
+enum TransactionCategory {
   HOUSING
   TRANSPORTATION
   FOOD
