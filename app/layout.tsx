@@ -26,7 +26,7 @@ export default function RootLayout({
           appearance={{
             baseTheme: dark,
           }}
-        >
+        > 
           {children}
         </ClerkProvider>
       </body>
