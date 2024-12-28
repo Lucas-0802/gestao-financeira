@@ -95,7 +95,7 @@ const UpsertTransactionDialog = ({
 
   const isUpdate = Boolean(transactionId);
 
-  const onSubmit = async (data: FormSchema) => {
+  const onSubmit = async (data: FormSchema) => {    
     try {
       await upsertTransaction({ ...data, id: transactionId });
       setIsOpen(false);
@@ -150,6 +150,7 @@ const UpsertTransactionDialog = ({
                   <FormControl>
                     <MoneyInput
                       placeholder="Digite o valor..."
+                      value={field.value}
                       onValueChange={({ floatValue }) =>
                         field.onChange(floatValue)
                       }
