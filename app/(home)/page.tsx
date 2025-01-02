@@ -14,10 +14,11 @@ import { AiReportButton } from "./_components/ai-report-button";
 interface HomeProps {
   searchParams: {
     month: string;
+    year: string
   };
 }
 
-const Home = async ({ searchParams: { month } }: HomeProps) => {
+const Home = async ({ searchParams: { month, year } }: HomeProps) => {
   const { userId } = await auth();
   if (!userId) {
     redirect("/login");
@@ -25,10 +26,10 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
 
   const monthIsInvalid = !month || !isMatch(month, "MM");
   if (monthIsInvalid) {
-    redirect(`?month=${new Date().getMonth() + 1}`);
+    redirect(`?month=${new Date().getMonth() + 1}&year=${new Date().getFullYear()}`);
   }
 
-  const dashboard = await getDashboard(month);
+  const dashboard = await getDashboard(month, year);
   const userCanAddTransaction = await canUserAddTransaction();
   const user = await clerkClient().users.getUser(userId)
 
@@ -45,7 +46,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
                 user.publicMetadata.subscriptionPlan === "premium"
               }
             />
-            <TimeSelect />
+            <TimeSelect page="home"/>
           </div>
         </div>
         <div className="grid h-full grid-cols-[2fr,1fr] gap-6 overflow-hidden">

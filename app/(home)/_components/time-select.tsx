@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Select,
@@ -8,43 +8,100 @@ import {
   SelectValue,
 } from "@/app/_components/ui/select";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 const MONTH_OPTIONS = [
-  { value: "01", label: "January" },
-  { value: "02", label: "February" },
-  { value: "03", label: "March" },
-  { value: "04", label: "April" },
-  { value: "05", label: "May" },
-  { value: "06", label: "June" },
-  { value: "07", label: "July" },
-  { value: "08", label: "August" },
-  { value: "09", label: "September" },
+  { value: "1", label: "January" },
+  { value: "2", label: "February" },
+  { value: "3", label: "March" },
+  { value: "4", label: "April" },
+  { value: "5", label: "May" },
+  { value: "6", label: "June" },
+  { value: "7", label: "July" },
+  { value: "8", label: "August" },
+  { value: "9", label: "September" },
   { value: "10", label: "October" },
   { value: "11", label: "November" },
   { value: "12", label: "December" },
 ];
 
-const TimeSelect = () => {
+const YEAR_OPTIONS = Array.from(
+  { length: 10 },
+  (_, index) => new Date().getFullYear() - index,
+).map((year) => ({ value: year.toString(), label: year.toString() }));
+
+interface TimeSelectProps {
+  page: string;
+}
+
+const TimeSelect = ({ page }: TimeSelectProps) => {
   const { push } = useRouter();
-  const handleMonthChange = (month: string) => {
-    push(`/?month=${month}`);
+  const searchParams = useSearchParams();
+
+  const [selectedMonth, setSelectedMonth] = useState<string>("");
+  const [selectedYear, setSelectedYear] = useState<string>("");
+
+  // Atualiza o estado inicial com base nos parâmetros da URL
+  useEffect(() => {
+    const initialMonth = searchParams.get("month") || "";
+    const initialYear = searchParams.get("year") || "";
+    setSelectedMonth(initialMonth);
+    setSelectedYear(initialYear);
+  }, [searchParams]);
+
+  const handleChange = (month: string, year: string) => {
+    if (month && year) {
+      const path =
+        page === "transactions"
+          ? `/transactions?month=${month}&year=${year}`
+          : `/?month=${month}&year=${year}`;
+
+      push(path);
+    }
   };
 
-  const searchParams = useSearchParams()
-  const month = searchParams.get('month')
   return (
-    <Select onValueChange={(value) => handleMonthChange(value)} defaultValue={month ?? ''}>
-      <SelectTrigger className="w-[150px] rounded-full">
-        <SelectValue placeholder="Mês" />
-      </SelectTrigger>
-      <SelectContent>
-        {MONTH_OPTIONS.map((option) => (
-          <SelectItem key={option.value} value={option.value}>
-            {option.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <div className="flex space-x-4">
+      {/* Month Selector */}
+      <Select
+        onValueChange={(value) => {
+          setSelectedMonth(value);
+          handleChange(value, selectedYear);
+        }}
+        value={selectedMonth}
+      >
+        <SelectTrigger className="w-[150px] rounded-full">
+          <SelectValue placeholder="Mês" />
+        </SelectTrigger>
+        <SelectContent>
+          {MONTH_OPTIONS.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      {/* Year Selector */}
+      <Select
+        onValueChange={(value) => {
+          setSelectedYear(value);
+          handleChange(selectedMonth, value);
+        }}
+        value={selectedYear}
+      >
+        <SelectTrigger className="w-[150px] rounded-full">
+          <SelectValue placeholder="Ano" />
+        </SelectTrigger>
+        <SelectContent>
+          {YEAR_OPTIONS.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
   );
 };
 
