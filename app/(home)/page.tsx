@@ -9,6 +9,7 @@ import { getDashboard } from "../_data/get-dashborad";
 import ExpensesPerCategory from "./_components/expenses-per-category";
 import LastTransactions from "./_components/last-transaction";
 import { canUserAddTransaction } from "../_data/can-user-add-transaction";
+import { AiReportButton } from "./_components/ai-report-button";
 
 interface HomeProps {
   searchParams: {
@@ -37,12 +38,12 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
         <div className="flex justify-between">
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <div className="flex items-center gap-3">
-            {/* <AiReportButton
+            <AiReportButton
               month={month}
-              hasPremiumPlan={
-                user.publicMetadata.subscriptionPlan === "premium"
-              }
-            /> */}
+              // hasPremiumPlan={
+              //   user.publicMetadata.subscriptionPlan === "premium"
+              // }
+            />
             <TimeSelect />
           </div>
         </div>
