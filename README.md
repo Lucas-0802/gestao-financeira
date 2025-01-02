@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💰 Gestão Financeira - Controle suas Finanças com Facilidade! 🚀
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-v13-blue)](https://nextjs.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-green)](https://www.prisma.io/)
+[![Stripe](https://img.shields.io/badge/Stripe-Payments-blueviolet)](https://stripe.com/)
+[![Gemini](https://img.shields.io/badge/Gemini-Integration-orange)](https://www.gemini.com/)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Visão Geral
+**Gestão Financeira** é uma aplicação de gestão financeira que combina tecnologia de ponta para ajudar você a organizar suas finanças pessoais. Este projeto utiliza **Next.js** para um frontend moderno e altamente performático, **Prisma ORM** para gerenciamento de dados robusto e flexível, banco de dados **PostgresSQL** além de integrações com **Stripe** para pagamentos e **Gemini**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Next.js](https://nextjs.org/):** Framework React para aplicações web rápidas e escaláveis.
+- **[Prisma](https://www.prisma.io/):** ORM moderno para facilitar o acesso ao banco de dados.
+- **[Stripe](https://stripe.com/):** Gerenciamento seguro e eficiente de pagamentos.
+- **[Gemini](https://www.gemini.com/):** Integração para funcionalidades relacionadas a criptomoedas.
+- **[PostgresSQL](https://www.postgresql.org/):** Banco de Dados.
+- **TypeScript:** Tipagem robusta para maior segurança e produtividade no desenvolvimento.
+- **TailwindCSS:** Estilização moderna e altamente customizável.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌟 Funcionalidades Principais
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **📊 Dashboard Interativo:**
+   - Visualize suas receitas, despesas e investimentos em gráficos dinâmicos.
+   - Filtros intuitivos para análise personalizada (por mês, ano, etc.).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **🔗 Integração com Stripe:**
+   - Gerencie pagamentos e assinaturas diretamente no painel.
 
-## Deploy on Vercel
+3. **💎 Integração com Gemini:**
+   - Relatórios detalhados sobre a saúde financeira do usuário.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **📂 Gerenciamento de Transações:**
+   - Adicione, edite e exclua transações de forma simples.
+   - Classificação automática em categorias (receitas, despesas e investimentos).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **🔐 Segurança e Escalabilidade:**
+   - Autenticação de usuário via [Clerk](https://clerk.dev/).
+   - Gerenciamento seguro de dados financeiros com Prisma.
+
