@@ -1,4 +1,4 @@
-# 💰 Financial Manager - Controle suas Finanças com Facilidade! 🚀
+# 💰 Gestão Financeira - Controle suas Finanças com Facilidade! 🚀
 
 [![Next.js](https://img.shields.io/badge/Next.js-v13-blue)](https://nextjs.org/)
 [![Prisma](https://img.shields.io/badge/Prisma-ORM-green)](https://www.prisma.io/)
@@ -8,7 +8,7 @@
 ---
 
 ## ✨ Visão Geral
-**Financial Manager** é uma aplicação de gestão financeira que combina tecnologia de ponta para ajudar você a organizar suas finanças pessoais ou empresariais. Este projeto utiliza **Next.js** para um frontend moderno e altamente performático, **Prisma ORM** para gerenciamento de dados robusto e flexível, além de integrações com **Stripe** para pagamentos e **Gemini** para operações relacionadas a criptoativos.
+**Gestão Financeira** é uma aplicação de gestão financeira que combina tecnologia de ponta para ajudar você a organizar suas finanças pessoais. Este projeto utiliza **Next.js** para um frontend moderno e altamente performático, **Prisma ORM** para gerenciamento de dados robusto e flexível, banco de dados **PostgresSQL** além de integrações com **Stripe** para pagamentos e **Gemini**.
 
 ---
 
@@ -18,6 +18,7 @@
 - **[Prisma](https://www.prisma.io/):** ORM moderno para facilitar o acesso ao banco de dados.
 - **[Stripe](https://stripe.com/):** Gerenciamento seguro e eficiente de pagamentos.
 - **[Gemini](https://www.gemini.com/):** Integração para funcionalidades relacionadas a criptomoedas.
+- **[PostgresSQL](https://www.postgresql.org/):** Banco de Dados.
 - **TypeScript:** Tipagem robusta para maior segurança e produtividade no desenvolvimento.
 - **TailwindCSS:** Estilização moderna e altamente customizável.
 
@@ -31,11 +32,9 @@
 
 2. **🔗 Integração com Stripe:**
    - Gerencie pagamentos e assinaturas diretamente no painel.
-   - Histórico detalhado de transações realizadas via Stripe.
 
 3. **💎 Integração com Gemini:**
-   - Conecte sua carteira de criptomoedas para monitorar valores e realizar operações.
-   - Relatórios detalhados sobre ganhos e perdas em criptoativos.
+   - Relatórios detalhados sobre a saúde financeira do usuário.
 
 4. **📂 Gerenciamento de Transações:**
    - Adicione, edite e exclua transações de forma simples.
