@@ -10,6 +10,8 @@
 ## ✨ Visão Geral
 **Gestão Financeira** é uma aplicação de gestão financeira que combina tecnologia de ponta para ajudar você a organizar suas finanças pessoais. Este projeto utiliza **Next.js** para um frontend moderno e altamente performático, **Prisma ORM** para gerenciamento de dados robusto e flexível, banco de dados **PostgresSQL** além de integrações com **Stripe** para pagamentos e **Gemini**.
 
+**[Gestão Financeira]([https://www.gemini.com/](https://gestao-financeira-sigma.vercel.app/)):** Use a aplicação para testar.
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
